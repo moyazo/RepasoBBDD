@@ -1,6 +1,6 @@
 <?php
 
-
+// CONNECTION TO BBDD WITH  mysqli_connect()
 $conexion = mysqli_connect("localhost","root","","campeoneslol");
 
 if(mysqli_connect_errno()){
@@ -11,16 +11,19 @@ if(mysqli_connect_errno()){
 
 $id = $_GET["id"];
 
-if(isset($_GET["delete"])){
+// ACCESS TO THE DATA OF THE BBDD
+
+if(isset($_GET["delete"])){ // IF $_GET["delete"] IS NOT EMPTY
     
-    $consultaDataDelete = "DELETE FROM `champions` WHERE id=$id";
-    mysqli_query($conexion,$consultaDataDelete);
+    $consultaDataDelete = "DELETE FROM `champions` WHERE id=$id"; // MYSQL QUERY
+    mysqli_query($conexion,$consultaDataDelete); // mysqli_query() ALLOW US TO GET THE DATA DEPENDING ON QUERY AND THE BBDD NAME
     header("Location:002campeones.php");
-}else{
-    $consultaData = "SELECT * FROM `champions` WHERE id= $id" ;
+    
+}else{ // IF $_GET["delete"] IS EMPTY
+    $consultaData = "SELECT * FROM `champions` WHERE id= $id" ; // MYSQL QUERY
 
 
-    $championName = mysqli_query($conexion,$consultaData);
+    $championName = mysqli_query($conexion,$consultaData); // mysqli_query() ALLOW US TO GET THE DATA DEPENDING ON QUERY AND THE BBDD NAME
     $name = "";
     $rol = "";
     $difficulty = "";

@@ -1,41 +1,34 @@
 <?php 
 
-
+// CONNECTION TO BBDD WITH  mysqli_connect()
 $conexion = mysqli_connect("localhost","root","","campeoneslol");
 
 if(mysqli_connect_errno()){
     echo "FAILED TO CONNECT TO MYSQL: ". mysqli_connect_error();
     exit();
 }
-if(isset($_GET["sort"])){
+
+// ACCESS TO THE DATA OF THE BBDD
+
+if(isset($_GET["sort"])){ // IF $_GET["sort"] IS NOT EMPTY
     $sortCase = $_GET["sort"];
     $consulta = "";
     switch ($sortCase) {
         case 0:
-            $consulta = "SELECT * FROM `champions` ORDER BY id DESC";
+            $consulta = "SELECT * FROM `champions` ORDER BY id DESC"; // ACCESS TO THE DATA OF THE BBDD
             break;
         
         case 1:
-            $consulta = "SELECT * FROM `champions` ORDER BY 'id' ASC" ;
+            $consulta = "SELECT * FROM `champions` ORDER BY 'id' ASC" ; // MYSQL QUERY
         break;
     }
 
-    $lista_champions = mysqli_query($conexion,$consulta);
+    $lista_champions = mysqli_query($conexion,$consulta); // mysqli_query() ALLOW US TO GET THE DATA DEPENDING ON QUERY AND THE BBDD NAME
     
-}else{
-    $consulta = "SELECT * FROM `champions`";
-    $lista_champions = mysqli_query($conexion,$consulta);
+}else{ // IF $_GET["sort"] IS NOT EMPTY
+    $consulta = "SELECT * FROM `champions`"; // MYSQL QUERY
+    $lista_champions = mysqli_query($conexion,$consulta); // mysqli_query() ALLOW US TO GET THE DATA DEPENDING ON QUERY AND THE BBDD NAME
 }
-
-
-
-
-
-
-
-// CONSULTA A BBDD
-
-
 ?>
 
 
@@ -75,10 +68,10 @@ if(isset($_GET["sort"])){
  </div>
 
  <script>
-    const ascDOM = document.getElementById("asc")
-    const descDOM = document.getElementById("desc")
+    const ascDOM = document.getElementById("asc") // GET THE arrow REFERENCE
+    const descDOM = document.getElementById("desc") // GET THE arrow REFERENCE
 
-    ascDOM.onclick = () =>{
+    ascDOM.onclick = () =>{ // WHEN CLIKC LOCATION REPLACE WITH 0 OR 1. DEPENDS ON THE ARROW
         location.replace("003campeones.php?sort=1")
     }
     descDOM.onclick = () =>{

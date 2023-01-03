@@ -1,12 +1,12 @@
 
-CREATE DATABASE campeonesLOL;
+CREATE DATABASE campeonesLOL; /* CREATE OUR DDBB */
 
 
 /* CREATE TABLE */
 
 
 CREATE TABLE champions(
-id INT AUTO_INCREMENT PRIMARY KEY,
+id INT AUTO_INCREMENT PRIMARY KEY, 
 nombre VARCHAR(128) NOT NULL,
 rol ENUM("Assassin","Fighter","Wizard","Marksmen","Supports","Tanks"),
 difficulty ENUM("Low","Moderate","High"),

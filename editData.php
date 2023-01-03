@@ -1,6 +1,6 @@
 <?php
 
-
+// CONNECTION TO BBDD WITH  mysqli_connect()
 $conexion = mysqli_connect("localhost","root","","campeoneslol");
 
 if(mysqli_connect_errno()){
@@ -8,17 +8,19 @@ if(mysqli_connect_errno()){
     exit();
 }
 
-
+// GET FIELDS WITH $_POST[""]
 $id = $_POST["id"];
 $name = $_POST["name"];
 $rol = $_POST["rol"];
 $dif = $_POST["diff"];
 $des = $_POST["des"];
 
-$consultaData = "UPDATE champions SET `nombre` = '$name', `rol` = '$rol[0]', `difficulty` = '$dif[0]', `descripcion` = '$des'  WHERE `id` = $id" ;
+// ACCESS TO THE DATA OF THE BBDD
+
+$consultaData = "UPDATE champions SET `nombre` = '$name', `rol` = '$rol[0]', `difficulty` = '$dif[0]', `descripcion` = '$des'  WHERE `id` = $id" ; // MYSQL QUERY
 
 
-$championName = mysqli_query($conexion,$consultaData);
+$championName = mysqli_query($conexion,$consultaData); // mysqli_query() ALLOW US TO GET THE DATA DEPENDING ON QUERY AND THE BBDD NAME
 
 ?>
 
