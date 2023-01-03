@@ -16,7 +16,7 @@ body{
     flex-flow: row;
     justify-content: space-around;
     align-items: center;
-    width: 100%;
+    width: 75%;
 }
 
 a{
@@ -93,4 +93,48 @@ label{
     color: white;
     border: 0px;
     padding: 2%;
+}
+
+/* 003campeones */
+
+#fields-container{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#fields{
+    background-color: grey;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 100%;
+    height: 10vh;
+}
+
+.field{
+    width: 100%;
+    text-align: center;
+}
+
+#asc{
+    width: 10%;
+    transform: rotate(90deg);
+    text-align: center;
+}
+#desc{
+    transform: rotate(-90deg);
+    margin-left: 5%;
+}
+
+#asc:hover{
+    cursor: pointer;
+    transform: scale(1.1) rotate(90deg);
+}
+#desc:hover{
+    cursor: pointer;
+    transform: scale(1.1) rotate(-90deg);
 }
