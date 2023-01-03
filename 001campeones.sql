@@ -1,12 +1,13 @@
 
 CREATE DATABASE campeonesLOL;
 
+
 /* CREATE TABLE */
 
 
 CREATE TABLE champions(
 id INT AUTO_INCREMENT PRIMARY KEY,
-`name` VARCHAR(128) NOT NULL,
+nombre VARCHAR(128) NOT NULL,
 rol ENUM("Assassin","Fighter","Wizard","Marksmen","Supports","Tanks"),
 difficulty ENUM("Low","Moderate","High"),
 descripcion TEXT

@@ -16,7 +16,7 @@ $lista_champions = mysqli_query($conexion,$consulta);
 
     if($lista_champions){
         foreach ($lista_champions as $champion) {
-           echo "Champion data<br><br> $champion[id] , $champion[name]<br><br>";
+           echo "Champion data<br><br> $champion[id] , $champion[nombre]<br><br>";
         }
     }
 
