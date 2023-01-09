@@ -50,7 +50,7 @@ if(isset($_GET["sort"])){ // IF $_GET["sort"] IS NOT EMPTY
             <p id='desc'><</p>
             <p id='asc'><</p>
             <div class='field'>
-            '$champion[nombre]'
+            '$champion[name]'
         </div>
         <div class='field'>
             '$champion[rol]'

@@ -30,7 +30,7 @@ if(isset($_GET["delete"])){ // IF $_GET["delete"] IS NOT EMPTY
     $descripcion = "";
     if($championName){
         foreach ($championName as $cname) {
-            $name = "$cname[nombre]";
+            $name = "$cname[name]";
             $rol = "$cname[rol]";
             $difficulty = "$cname[difficulty]";
             $descripcion = "$cname[descripcion]";

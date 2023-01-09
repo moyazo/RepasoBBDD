@@ -36,7 +36,7 @@ $lista_champions = mysqli_query($conexion,$consulta); // mysqli_query() ALLOW US
     if($lista_champions){ // WE CONTROL THAT WE HAVE VALUES
         foreach ($lista_champions as $champion) { 
         echo "
-                <p>Champion data<br><br> $champion[id] , $champion[nombre]</p> 
+                <p>Champion data<br><br> $champion[id] , $champion[name]</p> 
                 <a id='edit' href ='003editando.php?id=$champion[id]'>EDITAR</a> 
                 <input hidden value='$champion[id]' name='id'>
                 <input hidden value='delet' name='delete'>
